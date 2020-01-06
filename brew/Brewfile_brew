@@ -1,0 +1,22 @@
+brew "coreutils" # for awesome commands like timeout
+brew "dockutil"
+brew "diff-so-fancy"
+brew "fish"
+brew "flake8" # for linting Python files
+brew "git"
+brew "httpie"
+brew "jq"
+brew "mas"
+brew "node"
+brew "parallel"
+brew "postgresql"
+brew "python"
+brew "tldr"
+brew "tmux"
+brew "trash"
+brew "tree"
+brew "twine-pypi" # for packaging Pypi packages, needed by setup.py repo
+brew "vim"
+brew "wifi-password"
+brew "yarn"
+brew "heroku/brew/heroku"

@@ -1,0 +1,6 @@
+flask
+mypy
+pip-tools
+pipenv
+requests
+virtualenv
