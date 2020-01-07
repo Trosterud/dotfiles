@@ -18,7 +18,7 @@ set --global --export HOMEBREW_NO_AUTO_UPDATE true
 set --global --export EDITOR code
 set --global --export PYTHONDONTWRITEBYTECODE true
 set --global --export PYTHONUNBUFFERED true
-# set --global --export fish_greeting ''
+set --global --export fish_greeting ''
 set --global --export HOMEBREW_CASK_OPTS "--no-quarantine"
 # set --global --export LC_ALL en_US.UTF-8 # Set locale
 # set --global --export LANG en_US.UTF-8   # Set locale
@@ -41,12 +41,12 @@ set --global --export fish_user_paths \
 ############################################################################
 # Configuration for Powerline
 ############################################################################
-# set --global --export \
-#     POWERLINE_ROOT_REPO /usr/local/lib/python3.7/site-packages
-# set fish_function_path \
-#     $fish_function_path "$POWERLINE_ROOT_REPO/powerline/bindings/fish"
-# powerline-daemon --quiet
-# powerline-setup
+set --global --export \
+    POWERLINE_ROOT_REPO /usr/local/lib/python3.7/site-packages
+set fish_function_path \
+    $fish_function_path "$POWERLINE_ROOT_REPO/powerline/bindings/fish"
+powerline-daemon --quiet
+powerline-setup
 
 ############################################################################
 # Configuration for Oh-My-Fish!
