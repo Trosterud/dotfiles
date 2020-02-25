@@ -1,3 +1,3 @@
-function gl
+function gpl
     git pull $argv
 end
