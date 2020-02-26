@@ -167,7 +167,7 @@ function install_yarn_packages() {
 }
 
 function install_vscode_extensions() {
-    extensions=(esbenp.prettier-vscode ms-vsliveshare.vsliveshare)
+    extensions=(esbenp.prettier-vscode dbaeumer.vscode-eslint ms-vsliveshare.vsliveshare humao.rest-client eamodio.gitlens)
     info "Installing vscode extensions \"${extensions[*]}\""
 
     extensions_outcome=$(code --list-extensions)
