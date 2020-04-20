@@ -167,7 +167,15 @@ function install_yarn_packages() {
 }
 
 function install_vscode_extensions() {
-    extensions=(esbenp.prettier-vscode dbaeumer.vscode-eslint ms-vsliveshare.vsliveshare humao.rest-client eamodio.gitlens)
+    extensions=(
+        esbenp.prettier-vscode
+        dbaeumer.vscode-eslint
+        ms-vsliveshare.vsliveshare
+        humao.rest-client
+        eamodio.gitlens
+        yzhang.markdown-all-in-one
+	shd101wyy.markdown-preview-enhanced
+    )
     info "Installing vscode extensions \"${extensions[*]}\""
 
     extensions_outcome=$(code --list-extensions)
