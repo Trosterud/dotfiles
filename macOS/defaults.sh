@@ -72,7 +72,7 @@ function configure_dock() {
     quit "Dock"
     # Don’t show recent applications in Dock
     defaults write com.apple.dock show-recents -bool false
-    # Set the icon size of Dock items to 36 pixels
+    # Set the icon size of Dock items to 60 pixels
     defaults write com.apple.dock tilesize -int 60
     # Show only open applications in the Dock
     # defaults write com.apple.dock static-only -bool false
@@ -80,7 +80,7 @@ function configure_dock() {
     # defaults write com.apple.dock persistent-apps -array
     # defaults write com.apple.dock recent-apps -array
 
-    # dockutil --no-restart --remove all
+   # dockutil --no-restart --remove all
     # dockutil --no-restart --add "/Applications/Firefox.app"
     # dockutil --no-restart --add "/Applications/Google Chrome.app"
     # dockutil --no-restart --add "/Applications/Sourcetree.app"
@@ -92,7 +92,6 @@ function configure_dock() {
     # dockutil --no-restart --add "/Applications/kalenteri.app"
     defaults delete com.apple.dock persistent-apps
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Safari.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Telegram.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio Code.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
