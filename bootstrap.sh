@@ -174,6 +174,7 @@ function install_vscode_extensions() {
         humao.rest-client
         eamodio.gitlens
         yzhang.markdown-all-in-one
+        skyapps.fish-vscode
 	shd101wyy.markdown-preview-enhanced
     )
     info "Installing vscode extensions \"${extensions[*]}\""
