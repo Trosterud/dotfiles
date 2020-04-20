@@ -1,4 +1,5 @@
 brew "coreutils" # for awesome commands like timeout
+brew "blueutil"
 brew "dockutil"
 brew "diff-so-fancy"
 brew "fish"
@@ -6,6 +7,7 @@ brew "flake8" # for linting Python files
 brew "git"
 brew "httpie"
 brew "jq"
+brew "markdown"
 brew "mas"
 brew "node"
 brew "parallel"
