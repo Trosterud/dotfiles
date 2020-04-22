@@ -7,6 +7,7 @@ brew "flake8" # for linting Python files
 brew "git"
 brew "httpie"
 brew "jq"
+brew "leiningen"
 brew "markdown"
 brew "mas"
 brew "node"
