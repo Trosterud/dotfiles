@@ -38,13 +38,21 @@ function configure_system() {
 
     # Disable Gatekeeper for getting rid of unknown developers error
     sudo spctl --master-disable
+    
     # Disable natural scrolling
     defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+    
     # Disable macOS startup chime sound
     sudo defaults write com.apple.loginwindow LoginHook $LOGIN_HOOK_PATH
     sudo defaults write com.apple.loginwindow LogoutHook $LOGOUT_HOOK_PATH
     # Enable tap to click
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+    
+    # System Preferences > Accessibility > Mouse & Trackpad > Trackpad Potions
+    # Enable three finger moving of windows
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+
     # Configure keyboard repeat https://apple.stackexchange.com/a/83923/200178
     defaults write -g InitialKeyRepeat -int 15
     defaults write -g KeyRepeat -int 2
