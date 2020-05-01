@@ -2,34 +2,34 @@
   "entries": {
     "tap": {
       "heroku/brew": {
-        "revision": "3beb32c39ca5b2dc457f8024857224b8f635012d"
+        "revision": "432f1ecbe3c6ee05caaa14a83ad3c7c07850ffb4"
       },
       "homebrew/bundle": {
-        "revision": "9985a84879c23bc725defc2bd4cb50494f76b593"
+        "revision": "d2780e333cb7e6783ebe5d7a29a1afa89c8acc12"
       },
       "homebrew/cask": {
-        "revision": "d1d7d7fd17f57ba6ca4055898514bd2b715673c1"
+        "revision": "d42d36615424b0e9efe177e15742e32c9ff98328"
       },
       "homebrew/cask-fonts": {
-        "revision": "1407d48a88309eb141dd1900d81398e18ed95ee8"
+        "revision": "f8551cec9eca212d72c0b5f559c0ae0365a9729f"
       },
       "homebrew/core": {
-        "revision": "4af5cf00494115b1434e50eb957fe713d2ff7f3b"
+        "revision": "433cedc2bd5e83f07ea826fefc90685dbb11a4b6"
       },
       "homebrew/services": {
-        "revision": "eca39722f130e8bc1e2e322588db493ca0398c01"
+        "revision": "6e7ea0cff515df8b5d53a6e3066e16cf5e94d03a"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.2",
+        "HOMEBREW_VERSION": "2.2.14",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4af5cf00494115b1434e50eb957fe713d2ff7f3b",
-        "CLT": "11.3.0.0.1.1574140115",
-        "Xcode": "11.3",
-        "macOS": "10.15.2"
+        "Homebrew/homebrew-core": "433cedc2bd5e83f07ea826fefc90685dbb11a4b6",
+        "CLT": "1103.0.32.59",
+        "Xcode": "11.4.1",
+        "macOS": "10.15.4"
       }
     }
   }
