@@ -6,8 +6,9 @@ main() {
     install_homebrew
     install_packages_with_brewfile
     change_shell_to_fish
+    clone_dotfiles_repo
     install_pip_packages
-    install_yarn_packages
+    install_npm_packages
     install_vscode_extensions
     setup_symlinks
     setup_macOS_defaults
@@ -152,19 +153,17 @@ function install_pip_packages() {
 
 }
 
-function install_yarn_packages() {
-    # prettier for Neoformat to auto-format files
-    # typescript for YouCompleteMe
-    yarn_packages=(prettier typescript vmd create-react-app gatsby-cli netlify-cli)
-    echo_info "Installing yarn packages \"${yarn_packages[*]}\""
+function install_npm_packages() {
+    npm_packages=(fkill-cli vtop)
+    echo_info "Installing npm packages \"${npm_packages[*]}\""
 
-    yarn_list_outcome=$(yarn global list)
-    for package_to_install in "${yarn_packages[@]}"; do
-        if echo "$yarn_list_outcome" |
+    node_list_outcome=$(npm list -g --depth=0)
+    for package_to_install in "${npm_packages[@]}"; do
+        if echo "$node_list_outcome" |
             grep --ignore-case "$package_to_install" &>/dev/null; then
             echo_substep "\"${package_to_install}\" already exists"
         else
-            if yarn global add "$package_to_install"; then
+            if npm install --global "$package_to_install"; then
                 echo_substep "Package \"${package_to_install}\" installation succeeded"
             else
                 error "Package \"${package_to_install}\" installation failed"
@@ -173,7 +172,7 @@ function install_yarn_packages() {
         fi
     done
 
-    echo_success "yarn packages successfully installed"
+    echo_success "node packages successfully installed"
 }
 
 function install_vscode_extensions() {
@@ -189,7 +188,7 @@ function install_vscode_extensions() {
         foxundermoon.shell-format
         shd101wyy.markdown-preview-enhanced
     )
-    echo_info "Installing vscode extensions \"${extensions[*]}\""
+    echo_info "Installing vscode extensions"
 
     extensions_outcome=$(code --list-extensions)
     for extension_to_install in "${extensions[@]}"; do
@@ -216,9 +215,9 @@ function clone_dotfiles_repo() {
         pull_latest $DOTFILES_REPO
         echo_success "Pull successful in ${DOTFILES_REPO} repository"
     else
-        url=https://github.com/sam-hosseini/dotfiles.git
+        url=https://github.com/Trosterud/dotfiles.git
         if git clone "$url" $DOTFILES_REPO &&
-            git -C $DOTFILES_REPO remote set-url origin git@github.com:sam-hosseini/dotfiles.git; then
+            git -C $DOTFILES_REPO remote set-url origin git@github.com:Trosterud/dotfiles.git; then
             echo_success "Dotfiles repository cloned into ${DOTFILES_REPO}"
         else
             error "Dotfiles repository cloning failed"
@@ -238,15 +237,9 @@ function pull_latest() {
 
 function setup_symlinks() {
     APPLICATION_SUPPORT=~/Library/Application\ Support
-    POWERLINE_ROOT_REPO=/usr/local/lib/python3.7/site-packages
 
     echo_info "Setting up symlinks"
     symlink "git" ${DOTFILES_REPO}/git/gitconfig ~/.gitconfig
-    # symlink "hammerspoon" ${DOTFILES_REPO}/hammerspoon ~/.hammerspoon
-    # symlink "karabiner" ${DOTFILES_REPO}/karabiner ~/.config/karabiner
-    # symlink "powerline" ${DOTFILES_REPO}/powerline ${POWERLINE_ROOT_REPO}/powerline/config_files
-    # symlink "tmux" ${DOTFILES_REPO}/tmux/tmux.conf ~/.tmux.conf
-    # symlink "vim" ${DOTFILES_REPO}/vim/vimrc ~/.vimrc
 
     # Disable shell login message
     symlink "hushlogin" /dev/null ~/.hushlogin
@@ -261,7 +254,7 @@ function setup_symlinks() {
     # symlink "vscode:keybindings.json" ${DOTFILES_REPO}/vscode/keybindings.json /Users/pawelgrzybek/Library/Application\ Support/Code/User/keybindings.json
     # symlink "vscode:snippets"         ${DOTFILES_REPO}/vscode/snippets/ /Users/pawelgrzybek/Library/Application\ Support/Code/User
 
-    echo_success "Symlinks successfully setup, skipped hammerspoon karabiner powerline tmux vim"
+    echo_success "Symlinks successfully setup"
 }
 
 function symlink() {
