@@ -4,7 +4,6 @@
 ## See https://github.com/jodylent/dotfiles/blob/master/script/macos.sh
 
 main() {
-    configure_numi
     configure_accessibility
     configure_calendar
     configure_dock
@@ -17,7 +16,7 @@ main() {
 function configure_keyboard() {
     echo_substep "Configuring Keyboard Preferences"
 
-        # Configure keyboard repeat https://apple.stackexchange.com/a/83923/200178
+    # Configure keyboard repeat https://apple.stackexchange.com/a/83923/200178
     defaults write -g InitialKeyRepeat -int 15
     defaults write -g KeyRepeat -int 2
     # Disable "Correct spelling automatically"
@@ -49,18 +48,12 @@ function configure_menu_bar() {
 
     # Show volume in menu bar
     defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
-}
-
-function configure_numi() {
-    quit "Numi"
+    
     # Enable show in menu bar
     defaults write com.dmitrynikolaev.numi menuBarMode -int 1
-    # Enable alfred integration
-    defaults write com.dmitrynikolaev.numi alfredIntegration -int 1
-    # To disable welcome tours
-    defaults write com.dmitrynikolaev.numi hasLaunchedBefore -int 1
-    open "Numi"
+
 }
+
 
 function configure_accessibility() {
     echo_substep "Configuring accesibility preferences"
