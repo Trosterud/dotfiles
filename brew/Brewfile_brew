@@ -1,8 +1,9 @@
 brew "coreutils" # for awesome commands like timeout
-brew "blueutil"
+brew "blueutil" # for connecting to bluetooth headsets
+brew "install clojure/tools/clojure"
 brew "dockutil"
-brew "diff-so-fancy"
-brew "fish"
+brew "diff-so-fancy" # for beautiful git diff
+brew "fish" # for getting the good opinionated shell
 brew "flake8" # for linting Python files
 brew "git"
 brew "httpie"
@@ -11,13 +12,13 @@ brew "leiningen"
 brew "markdown"
 brew "mas"
 brew "node"
-brew "parallel"
+brew "parallel" # to run brew installs in paralell
 brew "postgresql"
 brew "python"
-brew "tldr"
+brew "tldr" # for a succint man pages alternative
 brew "tmux"
 brew "trash"
-brew "tree"
+brew "tree" # for printing folder tree in terminal
 brew "twine-pypi" # for packaging Pypi packages, needed by setup.py repo
 brew "vim"
 brew "wifi-password"
