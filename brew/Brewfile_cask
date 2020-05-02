@@ -1,3 +1,4 @@
+cask "adoptopenjdk11"
 cask "alfred"
 cask "anki"
 cask "dropbox"
