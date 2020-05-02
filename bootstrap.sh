@@ -187,6 +187,7 @@ function install_vscode_extensions() {
         idleberg.applescript
         foxundermoon.shell-format
         shd101wyy.markdown-preview-enhanced
+        betterthantomorrow.calva
     )
     echo_info "Installing vscode extensions"
 
