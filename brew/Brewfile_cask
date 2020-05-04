@@ -1,5 +1,6 @@
 cask "alfred"
 cask "anki"
+cask "docker"
 cask "dropbox"
 cask "evernote"
 cask "flux"
