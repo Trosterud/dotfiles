@@ -154,7 +154,7 @@ function install_pip_packages() {
 }
 
 function install_npm_packages() {
-    npm_packages=(fkill-cli vtop)
+    npm_packages=(fkill-cli vtop karma-cli)
     echo_info "Installing npm packages \"${npm_packages[*]}\""
 
     node_list_outcome=$(npm list -g --depth=0)
