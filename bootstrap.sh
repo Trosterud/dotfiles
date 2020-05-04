@@ -188,6 +188,7 @@ function install_vscode_extensions() {
         foxundermoon.shell-format
         shd101wyy.markdown-preview-enhanced
         betterthantomorrow.calva
+        ms-azuretools.vscode-docker
     )
     echo_info "Installing vscode extensions"
 
