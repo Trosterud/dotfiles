@@ -1,10 +1,13 @@
 brew "coreutils" # for awesome commands like timeout
 brew "blueutil" # for connecting to bluetooth headsets
-brew "install clojure/tools/clojure"
+brew "clj-kondo"
+brew "clojure/tools/clojure"
 brew "dockutil"
+brew "docker-compose"
 brew "diff-so-fancy" # for beautiful git diff
 brew "fish" # for getting the good opinionated shell
 brew "flake8" # for linting Python files
+brew "flyway"
 brew "git"
 brew "git-crypt"
 brew "httpie"
