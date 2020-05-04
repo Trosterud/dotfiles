@@ -6,6 +6,7 @@ brew "diff-so-fancy" # for beautiful git diff
 brew "fish" # for getting the good opinionated shell
 brew "flake8" # for linting Python files
 brew "git"
+brew "git-crypt"
 brew "httpie"
 brew "jq"
 brew "leiningen"
