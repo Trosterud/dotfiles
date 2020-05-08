@@ -9,6 +9,7 @@ brew "fish" # for getting the good opinionated shell
 brew "flake8" # for linting Python files
 brew "flyway"
 brew "git"
+brew "fzf"
 brew "git-crypt"
 brew "httpie"
 brew "jq"
