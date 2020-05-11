@@ -1,8 +1,9 @@
-# "Â¬" charachter tells osascript that the line continues
-set login_item_list to {Â¬
-    "Numi",Â¬
-    "Spectacle",Â¬
-    "Terminal"Â¬
+# "Â" charachter tells osascript that the line continues
+set login_item_list to {Â
+    "Alfred 4",Â
+    "Numi",Â
+    "Spectacle",Â
+    "Terminal"Â
 }
 
 tell application "System Events" to delete every login item

@@ -12,6 +12,7 @@ main() {
     install_vscode_extensions
     setup_symlinks
     setup_macOS_defaults
+    update_login_items
 }
 
 DOTFILES_REPO=~/personal/dotfiles
@@ -182,13 +183,13 @@ function install_vscode_extensions() {
         ms-vsliveshare.vsliveshare
         humao.rest-client
         eamodio.gitlens
-        yzhang.markdown-all-in-one
         skyapps.fish-vscode
         idleberg.applescript
         foxundermoon.shell-format
         shd101wyy.markdown-preview-enhanced
         betterthantomorrow.calva
         ms-azuretools.vscode-docker
+	avli.clojure
     )
     echo_info "Installing vscode extensions"
 
