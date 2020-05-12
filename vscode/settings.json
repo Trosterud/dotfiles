@@ -332,7 +332,7 @@
     "editor.roundedSelection": true,
   
     // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty.
-    "editor.rulers": [],
+    "editor.rulers": [120],
   
     // Controls the number of extra characters beyond which the editor will scroll horizontally.
     "editor.scrollBeyondLastColumn": 5,
@@ -1174,8 +1174,9 @@
     // Maximum amount of characters per line (0 = disable).
     "html.format.wrapLineLength": 120,
   
+    // TODO: fix this admittedly unused deprecation
     // Enable/disable mirroring cursor on matching HTML tag.
-    "html.mirrorCursorOnMatchingTag": true,
+    // "html.mirrorCursorOnMatchingTag": true,
   
     // Controls whether the built-in HTML language support suggests HTML5 tags, properties and values.
     "html.suggest.html5": true,
@@ -1330,8 +1331,9 @@
     // Preferred quote style to use for quick fixes: `single` quotes, `double` quotes, or `auto` infer quote type from existing imports. Requires using TypeScript 2.9 or newer in the workspace.
     "javascript.preferences.quoteStyle": "auto",
   
+    // TODO: fix this admittedly unused deprecation
     // Enable/disable introducing aliases for object shorthand properties during renames. Requires using TypeScript 3.4 or newer in the workspace.
-    "javascript.preferences.renameShorthandProperties": true,
+    // "javascript.preferences.renameShorthandProperties": true,
   
     // Enable/disable references CodeLens in JavaScript files.
     "javascript.referencesCodeLens.enabled": false,
@@ -1453,8 +1455,9 @@
     // Preferred quote style to use for quick fixes: `single` quotes, `double` quotes, or `auto` infer quote type from existing imports. Requires using TypeScript 2.9 or newer in the workspace.
     "typescript.preferences.quoteStyle": "auto",
   
+    // TODO: fix this admittedly unused deprecation
     // Enable/disable introducing aliases for object shorthand properties during renames. Requires using TypeScript 3.4 or newer in the workspace.
-    "typescript.preferences.renameShorthandProperties": true,
+    // "typescript.preferences.renameShorthandProperties": true,
   
     // Enable/disable references CodeLens in TypeScript files.
     "typescript.referencesCodeLens.enabled": false,
@@ -2532,6 +2535,9 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prettier.semi": false,
-    "prettier.printWidth": 120
+    "prettier.printWidth": 120,
+    "[clojure]": {
+      "editor.defaultFormatter": "betterthantomorrow.calva"
+    },
   }
   
