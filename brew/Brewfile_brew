@@ -5,9 +5,11 @@ brew "clojure/tools/clojure"
 brew "dockutil"
 brew "docker-compose"
 brew "diff-so-fancy" # for beautiful git diff
+brew "ffmpeg" # for video manipulation, also vid -> gif
 brew "fish" # for getting the good opinionated shell
 brew "flake8" # for linting Python files
 brew "flyway"
+brew "gifsicle" # for gif_compress fish function
 brew "git"
 brew "fzf"
 brew "git-crypt"
