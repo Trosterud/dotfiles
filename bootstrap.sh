@@ -258,6 +258,8 @@ function setup_symlinks() {
     # symlink "vscode:keybindings.json" ${DOTFILES_REPO}/vscode/keybindings.json /Users/pawelgrzybek/Library/Application\ Support/Code/User/keybindings.json
     # symlink "vscode:snippets"         ${DOTFILES_REPO}/vscode/snippets/ /Users/pawelgrzybek/Library/Application\ Support/Code/User
 
+    symlink "karabiner" ${DOTFILES_REPO}/karabiner ~/.config/karabiner
+
     echo_success "Symlinks successfully setup"
 }
 
