@@ -1,6 +1,6 @@
 brew "coreutils" # for awesome commands like timeout
 brew "blueutil" # for connecting to bluetooth headsets
-brew "clj-kondo"
+# brew "clj-kondo"
 brew "clojure/tools/clojure"
 brew "dockutil"
 brew "docker-compose"
@@ -19,6 +19,7 @@ brew "leiningen"
 brew "markdown"
 brew "mas"
 brew "node"
+brew "npm"
 brew "parallel" # to run brew installs in paralell
 brew "pgcli" # Postgresql CLI with auto-completion and syntax highlighting
 brew "postgresql"
@@ -30,5 +31,5 @@ brew "tree" # for printing folder tree in terminal
 brew "twine-pypi" # for packaging Pypi packages, needed by setup.py repo
 brew "vim"
 brew "wifi-password"
-brew "yarn"
+# brew "yarn"
 brew "heroku/brew/heroku"
