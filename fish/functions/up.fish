@@ -13,8 +13,8 @@ function up
     echo -e '####################################\n# Pip \n####################################'
     pip-sync ~/personal/dotfiles/pip/requirements.txt
 
-    echo -e '####################################\n# Yarn \n####################################'
-    yarn global upgrade --silent
+    echo -e '####################################\n# Npm \n####################################'
+    npm update -g
 
     echo -e '\n####################################\n# Oh-My-Fish \n####################################'
     omf install; omf update;
