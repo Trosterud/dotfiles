@@ -12,6 +12,7 @@ main() {
     install_vscode_extensions
     setup_symlinks
     setup_macOS_defaults
+    update_login_items
 }
 
 DOTFILES_REPO=~/personal/dotfiles
@@ -182,13 +183,13 @@ function install_vscode_extensions() {
         ms-vsliveshare.vsliveshare
         humao.rest-client
         eamodio.gitlens
-        yzhang.markdown-all-in-one
         skyapps.fish-vscode
         idleberg.applescript
         foxundermoon.shell-format
         shd101wyy.markdown-preview-enhanced
         betterthantomorrow.calva
         ms-azuretools.vscode-docker
+	avli.clojure
     )
     echo_info "Installing vscode extensions"
 
@@ -256,6 +257,8 @@ function setup_symlinks() {
     symlink "vscode:settings.json" ${DOTFILES_REPO}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
     # symlink "vscode:keybindings.json" ${DOTFILES_REPO}/vscode/keybindings.json /Users/pawelgrzybek/Library/Application\ Support/Code/User/keybindings.json
     # symlink "vscode:snippets"         ${DOTFILES_REPO}/vscode/snippets/ /Users/pawelgrzybek/Library/Application\ Support/Code/User
+
+    symlink "karabiner" ${DOTFILES_REPO}/karabiner ~/.config/karabiner
 
     echo_success "Symlinks successfully setup"
 }

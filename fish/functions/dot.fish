@@ -1,3 +1,3 @@
 function dot
-    code ~/personal/dotfiles/
+    cd ~/personal/dotfiles/
 end
