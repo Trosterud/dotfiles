@@ -2,7 +2,7 @@
     // Editor
   
     // Controls whether the diff editor shows changes in leading or trailing whitespace as diffs.
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
   
     // Timeout in milliseconds after which diff computation is cancelled. Use 0 for no timeout.
     "diffEditor.maxComputationTime": 5000,
@@ -326,7 +326,7 @@
     //  - boundary: Render whitespace characters except for single spaces between words.
     //  - selection: Render whitespace characters only on selected text.
     //  - all
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
   
     // Controls whether selections should have rounded corners.
     "editor.roundedSelection": true,
@@ -2450,7 +2450,7 @@
     "git.smartCommitChanges": "all",
   
     // Suggests to enable smart commit (commit all changes when there are no staged changes).
-    "git.suggestSmartCommit": true,
+    "git.suggestSmartCommit": false,
   
     // Controls whether a notification comes up when running the Sync action, which allows the user to cancel the operation.
     "git.supportCancellation": false,
