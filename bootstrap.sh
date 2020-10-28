@@ -178,18 +178,22 @@ function install_npm_packages() {
 
 function install_vscode_extensions() {
     extensions=(
-        esbenp.prettier-vscode
-        dbaeumer.vscode-eslint
-        ms-vsliveshare.vsliveshare
-        humao.rest-client
-        eamodio.gitlens
-        skyapps.fish-vscode
         idleberg.applescript
-        foxundermoon.shell-format
-        shd101wyy.markdown-preview-enhanced
         betterthantomorrow.calva
+        esbenp.prettier-vscode
         ms-azuretools.vscode-docker
-	avli.clojure
+        dbaeumer.vscode-eslint
+        skyapps.fish-vscode
+        eamodio.gitlens
+        ms-vsliveshare.vsliveshare
+        shd101wyy.markdown-preview-enhanced
+        prettier
+        humao.rest-client
+        foxundermoon.shell-format
+        jock.svg
+        vscodevim.vim
+        # borkdude.clj-kondo
+	    # avli.clojure
     )
     echo_info "Installing vscode extensions"
 
