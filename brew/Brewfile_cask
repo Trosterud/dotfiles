@@ -13,7 +13,7 @@ cask "grandperspective"
 cask "karabiner-elements"
 cask "libreoffice"
 cask "numi"
-cask "omnifocus"
+# cask "omnifocus" # install manually instead!
 cask "postico"
 cask "signal"
 cask "slack"
