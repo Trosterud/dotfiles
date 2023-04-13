@@ -53,3 +53,20 @@ set -q XDG_DATA_HOME
     or set  --global --export OMF_PATH "$HOME/.local/share/omf"
 source $OMF_PATH/init.fish
 
+
+############################################################################
+# Configuration for work project cred
+############################################################################
+set --global --export GOOGLE_APPLICATION_CREDENTIALS "$HOME/.credentials/iprally-9844ece235f9.json"
+
+############################################################################
+# 
+############################################################################
+
+set -x DENO_INSTALL /Users/sindre/.deno
+set -x PATH $DENO_INSTALL/bin:$PATH
+
+
+# pyenv init
+  pyenv init - | source
+set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths

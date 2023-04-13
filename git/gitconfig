@@ -23,3 +23,6 @@
 ############################################################################
 [core]
 	autocrlf = input  # bit.ly/2RLLxed
+	editor = code --wait
+[credential]
+	useHttpPath = true

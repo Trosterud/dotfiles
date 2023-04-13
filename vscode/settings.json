@@ -85,7 +85,7 @@
     "editor.cursorBlinking": "blink",
   
     // Controls whether the smooth caret animation should be enabled.
-    "editor.cursorSmoothCaretAnimation": false,
+    "editor.cursorSmoothCaretAnimation": "off",
   
     // Controls the cursor style.
     "editor.cursorStyle": "line",
@@ -102,7 +102,7 @@
     "editor.cursorWidth": 0,
   
     // Defines a default formatter which takes precedence over all other formatter settings. Must be the identifier of an extension contributing a formatter.
-    "editor.defaultFormatter": null,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   
     // Controls whether `editor.tabSize#` and `#editor.insertSpaces` will be automatically detected when a file is opened based on the file contents.
     "editor.detectIndentation": true,
@@ -212,9 +212,6 @@
     // Controls whether the cursor should be hidden in the overview ruler.
     "editor.hideCursorInOverviewRuler": false,
   
-    // Controls whether the editor should highlight the active indent guide.
-    "editor.highlightActiveIndentGuide": true,
-  
     // Controls the delay in milliseconds after which the hover is shown.
     "editor.hover.delay": 300,
   
@@ -309,10 +306,7 @@
     "editor.renderControlCharacters": false,
   
     // Render last line number when the file ends with a newline.
-    "editor.renderFinalNewline": true,
-  
-    // Controls whether the editor should render indent guides.
-    "editor.renderIndentGuides": true,
+    "editor.renderFinalNewline": "on",
   
     // Controls how the editor should render the current line highlight.
     //  - none
@@ -513,7 +507,7 @@
     //  - on: Lines will wrap at the viewport width.
     //  - wordWrapColumn: Lines will wrap at `editor.wordWrapColumn`.
     //  - bounded: Lines will wrap at the minimum of viewport and `editor.wordWrapColumn`.
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "on",
   
     // Controls the wrapping column of the editor when `editor.wordWrap` is `wordWrapColumn` or `bounded`.
     "editor.wordWrapColumn": 120,
@@ -573,9 +567,6 @@
   
     // Overrides colors from the currently selected color theme.
     "workbench.colorCustomizations": {},
-  
-    // Specifies the color theme used in the workbench.
-    "workbench.colorTheme": "Default Dark+",
   
     // Controls the number of recently used commands to keep in history for the command palette. Set to 0 to disable command history.
     "workbench.commandPalette.history": 50,
@@ -826,9 +817,6 @@
     // Adjust the appearance of the window title bar. On Linux and Windows, this setting also affects the application and context menu appearances. Changes require a full restart to apply.
     "window.titleBarStyle": "custom",
   
-    // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
-    "window.zoomLevel": 1,
-  
     // Files
   
     // Configure file associations to languages (e.g. `"*.extension": "html"`). These have precedence over the default associations of the languages installed.
@@ -1009,9 +997,6 @@
   
     // Search case-insensitively if the pattern is all lowercase, otherwise, search case-sensitively.
     "search.smartCase": false,
-  
-    // Controls whether to use global `.gitignore` and `.ignore` files when searching for files.
-    "search.useGlobalIgnoreFiles": false,
   
     // Controls whether to use `.gitignore` and `.ignore` files when searching for files.
     "search.useIgnoreFiles": true,
@@ -2215,7 +2200,11 @@
     // Configure editor settings to be overridden for [markdown] language.
     "[markdown]": {
       "editor.wordWrap": "on",
-      "editor.quickSuggestions": false
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      }
     },
   
     // Configure editor settings to be overridden for [scss] language.
@@ -2267,7 +2256,7 @@
     "emmet.excludeLanguages": ["markdown"],
   
     // Path to a folder containing Emmet profiles and snippets.
-    "emmet.extensionsPath": null,
+    "emmet.extensionsPath": [],
   
     // Enable Emmet abbreviations in languages that are not supported by default. Add a mapping here between the language and emmet supported language.
     //  E.g.: `{"vue-html": "html", "javascript": "javascriptreact"}`
@@ -2303,9 +2292,6 @@
   
     // Controls whether force push (with or without lease) is enabled.
     "git.allowForcePush": false,
-  
-    // Always show the Staged Changes resource group.
-    "git.alwaysShowStagedChangesResourceGroup": false,
   
     // Controls the signoff flag for all commits.
     "git.alwaysSignOff": false,
@@ -2537,7 +2523,31 @@
     "prettier.semi": false,
     "prettier.printWidth": 120,
     "[clojure]": {
-      "editor.defaultFormatter": "betterthantomorrow.calva"
+      "editor.defaultFormatter": "betterthantomorrow.calva",
+      "editor.autoClosingBrackets": "always",
+      "editor.autoClosingOvertype": "always",
+      "editor.formatOnPaste": true
+    },
+    "calva.prettyPrintingOptions": {
+      "enabled": true,
+      "printEngine": "pprint",
+      "width": 120,
+      "maxLength": 50
+    },
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb",
+      "git-rebase-todo": "default"
+    },
+    "gitlens.advanced.messages": {
+      "suppressRebaseSwitchToTextWarning": true
+    },
+    "editor.guides.indentation": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
     },
   }
   
