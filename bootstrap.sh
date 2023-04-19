@@ -7,9 +7,9 @@ main() {
     install_packages_with_brewfile
     change_shell_to_fish
     clone_dotfiles_repo
-    install_pip_packages
+    # install_pip_packages
     install_npm_packages
-    install_vscode_extensions
+    # install_vscode_extensions
     setup_symlinks
     setup_macOS_defaults
     update_login_items
@@ -141,79 +141,80 @@ function change_shell_to_fish() {
     fi
 }
 
-function install_pip_packages() {
-    echo_info "Installing pip packages"
-    REQUIREMENTS_FILE=${DOTFILES_REPO}/pip/requirements.txt
+# function install_pip_packages() {
+#     echo_info "Installing pip packages"
+#     REQUIREMENTS_FILE=${DOTFILES_REPO}/pip/requirements.txt
 
-    if pip3 install -r "$REQUIREMENTS_FILE" 1>/dev/null; then
-        echo_success "pip packages successfully installed"
-    else
-        error "pip packages installation failed"
-        exit 1
-    fi
+#     if pip3 install -r "$REQUIREMENTS_FILE" 1>/dev/null; then
+#         echo_success "pip packages successfully installed"
+#     else
+#         error "pip packages installation failed"
+#         exit 1
+#     fi
 
-}
+# }
 
-function install_npm_packages() {
-    npm_packages=(fkill-cli vtop karma-cli resume-cli)
-    echo_info "Installing npm packages \"${npm_packages[*]}\""
+# function install_npm_packages() {
+#     npm_packages=(fkill-cli)
+#     # npm_packages=(fkill-cli vtop karma-cli resume-cli)
+#     echo_info "Installing npm packages \"${npm_packages[*]}\""
 
-    node_list_outcome=$(npm list -g --depth=0)
-    for package_to_install in "${npm_packages[@]}"; do
-        if echo "$node_list_outcome" |
-            grep --ignore-case "$package_to_install" &>/dev/null; then
-            echo_substep "\"${package_to_install}\" already exists"
-        else
-            if npm install --global "$package_to_install"; then
-                echo_substep "Package \"${package_to_install}\" installation succeeded"
-            else
-                error "Package \"${package_to_install}\" installation failed"
-                exit 1
-            fi
-        fi
-    done
+#     node_list_outcome=$(npm list -g --depth=0)
+#     for package_to_install in "${npm_packages[@]}"; do
+#         if echo "$node_list_outcome" |
+#             grep --ignore-case "$package_to_install" &>/dev/null; then
+#             echo_substep "\"${package_to_install}\" already exists"
+#         else
+#             if npm install --global "$package_to_install"; then
+#                 echo_substep "Package \"${package_to_install}\" installation succeeded"
+#             else
+#                 error "Package \"${package_to_install}\" installation failed"
+#                 exit 1
+#             fi
+#         fi
+#     done
 
-    echo_success "node packages successfully installed"
-}
+#     echo_success "node packages successfully installed"
+# }
 
-function install_vscode_extensions() {
-    extensions=(
-        idleberg.applescript
-        betterthantomorrow.calva
-        esbenp.prettier-vscode
-        ms-azuretools.vscode-docker
-        dbaeumer.vscode-eslint
-        skyapps.fish-vscode
-        eamodio.gitlens
-        ms-vsliveshare.vsliveshare
-        shd101wyy.markdown-preview-enhanced
-        prettier
-        humao.rest-client
-        foxundermoon.shell-format
-        jock.svg
-        vscodevim.vim
-        # borkdude.clj-kondo
-	    # avli.clojure
-    )
-    echo_info "Installing vscode extensions"
+# function install_vscode_extensions() {
+#     extensions=(
+#         idleberg.applescript
+#         betterthantomorrow.calva
+#         esbenp.prettier-vscode
+#         ms-azuretools.vscode-docker
+#         dbaeumer.vscode-eslint
+#         skyapps.fish-vscode
+#         eamodio.gitlens
+#         ms-vsliveshare.vsliveshare
+#         shd101wyy.markdown-preview-enhanced
+#         prettier
+#         humao.rest-client
+#         foxundermoon.shell-format
+#         jock.svg
+#         vscodevim.vim
+#         # borkdude.clj-kondo
+# 	    # avli.clojure
+#     )
+#     echo_info "Installing vscode extensions"
 
-    extensions_outcome=$(code --list-extensions)
-    for extension_to_install in "${extensions[@]}"; do
-        if echo "$extensions_outcome" |
-            grep --ignore-case "$extension_to_install" &>/dev/null; then
-            echo_substep "\"${extension_to_install}\" already exists"
-        else
-            if code --install-extension "$extension_to_install"; then
-                echo_substep "Extension \"${extension_to_install}\" installation succeeded"
-            else
-                error "Extension \"${extension_to_install}\" installation failed"
-                exit 1
-            fi
-        fi
-    done
+#     extensions_outcome=$(code --list-extensions)
+#     for extension_to_install in "${extensions[@]}"; do
+#         if echo "$extensions_outcome" |
+#             grep --ignore-case "$extension_to_install" &>/dev/null; then
+#             echo_substep "\"${extension_to_install}\" already exists"
+#         else
+#             if code --install-extension "$extension_to_install"; then
+#                 echo_substep "Extension \"${extension_to_install}\" installation succeeded"
+#             else
+#                 error "Extension \"${extension_to_install}\" installation failed"
+#                 exit 1
+#             fi
+#         fi
+#     done
 
-    echo_success "vscode extensions successfully installed"
-}
+#     echo_success "vscode extensions successfully installed"
+# }
 
 function clone_dotfiles_repo() {
     echo_info "Cloning dotfiles repository into ${DOTFILES_REPO}"
@@ -258,11 +259,9 @@ function setup_symlinks() {
     symlink "fish:oh_my_fish" ${DOTFILES_REPO}/fish/oh_my_fish ~/.config/omf
 
     # Visual Studio Code
-    symlink "vscode:settings.json" ${DOTFILES_REPO}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-    # symlink "vscode:keybindings.json" ${DOTFILES_REPO}/vscode/keybindings.json /Users/pawelgrzybek/Library/Application\ Support/Code/User/keybindings.json
-    # symlink "vscode:snippets"         ${DOTFILES_REPO}/vscode/snippets/ /Users/pawelgrzybek/Library/Application\ Support/Code/User
-
-    symlink "karabiner" ${DOTFILES_REPO}/karabiner ~/.config/karabiner
+    # symlink "vscode:settings.json" ${DOTFILES_REPO}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+    # # symlink "vscode:keybindings.json" ${DOTFILES_REPO}/vscode/keybindings.json /Users/pawelgrzybek/Library/Application\ Support/Code/User/keybindings.json
+    # # symlink "vscode:snippets"         ${DOTFILES_REPO}/vscode/snippets/ /Users/pawelgrzybek/Library/Application\ Support/Code/User
 
     echo_success "Symlinks successfully setup"
 }
