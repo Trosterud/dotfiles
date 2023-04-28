@@ -3,10 +3,10 @@
 main() {
     ask_for_sudo
     install_xcode_command_line_tools # to get "git", needed for clone_dotfiles_repo
+    clone_dotfiles_repo
     install_homebrew
     install_packages_with_brewfile
     change_shell_to_fish
-    clone_dotfiles_repo
     # install_pip_packages
     install_npm_packages
     # install_vscode_extensions
@@ -55,8 +55,9 @@ function install_homebrew() {
     if hash brew 2>/dev/null; then
         echo_success "Homebrew already exists"
     else
-        url=https://raw.githubusercontent.com/Homebrew/install/master/install
-        if yes | /usr/bin/ruby -e "$(curl -fsSL ${url})"; then
+        url=https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+        echo ${url}
+        if yes | /bin/bash -c "$(curl -fsSL ${url})"; then
             echo_success "Homebrew installation succeeded"
         else
             error "Homebrew installation failed"
