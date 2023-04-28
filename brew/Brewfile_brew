@@ -31,5 +31,5 @@ brew "tree" # for printing folder tree in terminal
 brew "twine-pypi" # for packaging Pypi packages, needed by setup.py repo
 brew "vim"
 brew "wifi-password"
-# brew "yarn"
+brew "yarn"
 # brew "heroku/brew/heroku"
