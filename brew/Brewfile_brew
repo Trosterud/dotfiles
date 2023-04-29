@@ -18,6 +18,7 @@ brew "git-crypt"
 # brew "leiningen"
 # brew "markdown"
 brew "mas"
+brew "nano"
 brew "node"
 brew "npm"
 brew "parallel" # to run brew installs in paralell
