@@ -6,7 +6,7 @@
 main() {
     configure_accessibility
     configure_calendar
-    configure_dock
+    # configure_dock
     configure_finder
     configure_keyboard
     configure_menu_bar
@@ -34,7 +34,7 @@ function configure_keyboard() {
     # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
     # Enable full keyboard access for all controls which enables Tab selection in modal dialogs
     # Basically for multiple choice confirmation boxes, we want tab to work to not use the mouse
-    defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+    # defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
     # Stop iTunes from responding to the keyboard media keys
     launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2>/dev/null
 
@@ -65,18 +65,18 @@ function configure_accessibility() {
 }
 
 function configure_system() {
-    LOGIN_HOOK_PATH=~/personal/dotfiles/macOS/login_hook_script.sh
-    LOGOUT_HOOK_PATH=~/personal/dotfiles/macOS/logout_hook_script.sh
+    # LOGIN_HOOK_PATH=~/personal/dotfiles/macOS/login_hook_script.sh
+    # LOGOUT_HOOK_PATH=~/personal/dotfiles/macOS/logout_hook_script.sh
 
     # Disable Gatekeeper for getting rid of unknown developers error
-    sudo spctl --master-disable
+    # sudo spctl --master-disable
 
     # Disable natural scrolling
-    defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+    # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
     # Disable macOS startup chime sound
-    sudo defaults write com.apple.loginwindow LoginHook $LOGIN_HOOK_PATH
-    sudo defaults write com.apple.loginwindow LogoutHook $LOGOUT_HOOK_PATH
+    # sudo defaults write com.apple.loginwindow LoginHook $LOGIN_HOOK_PATH
+    # sudo defaults write com.apple.loginwindow LogoutHook $LOGOUT_HOOK_PATH
 
     # Enable tap to click
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
@@ -99,12 +99,8 @@ function configure_dock() {
 
     # Add Apps to Dock
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/Utilities/Terminal.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Slack.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Firefox.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
     defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio Code.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/omnifocus.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
     # Don’t animate opening applications from the Dock
     defaults write com.apple.dock launchanim -bool false
@@ -161,7 +157,7 @@ function configure_calendar() {
     defaults write com.apple.iCal "Show Week Numbers" -bool true
 
     # Make text smaller
-    defaults write com.apple.iCal "CalUICanvasOccurrenceFontSize" -int 14
+    # defaults write com.apple.iCal "CalUICanvasOccurrenceFontSize" -int 14
 
 }
 
@@ -179,10 +175,10 @@ function configure_finder() {
     defaults write com.apple.screensaver askForPasswordDelay -int 0
 
     # allow quitting via ⌘ + q; doing so will also hide desktop icons
-    defaults write com.apple.finder QuitMenuItem -bool true
+    # defaults write com.apple.finder QuitMenuItem -bool true
 
     # disable window animations and Get Info animations
-    defaults write com.apple.finder DisableAllAnimations -bool true
+    # defaults write com.apple.finder DisableAllAnimations -bool true
 
     # Set Downloads as the default location for new Finder windows
     defaults write com.apple.finder NewWindowTarget -string "PfLo"
@@ -205,12 +201,12 @@ function configure_finder() {
     defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
     # Disable disk image verification
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify -bool true
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify-locked -bool true
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify-remote -bool true
+    # defaults write com.apple.frameworks.diskimages \
+    #     skip-verify -bool true
+    # defaults write com.apple.frameworks.diskimages \
+    #     skip-verify-locked -bool true
+    # defaults write com.apple.frameworks.diskimages \
+    #     skip-verify-remote -bool true
 
     # Use list view in all Finder windows by default
     # Four-letter codes for view modes: icnv, clmv, Flwv, Nlsv
