@@ -6,13 +6,13 @@ main() {
     clone_dotfiles_repo
     install_homebrew
     install_packages_with_brewfile
-    change_shell_to_fish
+    # change_shell_to_fish
     # install_pip_packages
-    install_npm_packages
+    # install_npm_packages
     # install_vscode_extensions
     setup_symlinks
     setup_macOS_defaults
-    update_login_items
+    # update_login_items
 }
 
 DOTFILES_REPO=~/personal/dotfiles
@@ -253,11 +253,11 @@ function setup_symlinks() {
     # Disable shell login message
     symlink "hushlogin" /dev/null ~/.hushlogin
 
-    symlink "fish:completions" ${DOTFILES_REPO}/fish/completions ~/.config/fish/completions
-    symlink "fish:functions" ${DOTFILES_REPO}/fish/functions ~/.config/fish/functions
-    symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish ~/.config/fish/config.fish
-    symlink "fish:abbreviations.fish" ${DOTFILES_REPO}/fish/abbreviations.fish ~/.config/fish/abbreviations.fish
-    symlink "fish:oh_my_fish" ${DOTFILES_REPO}/fish/oh_my_fish ~/.config/omf
+    # symlink "fish:completions" ${DOTFILES_REPO}/fish/completions ~/.config/fish/completions
+    # symlink "fish:functions" ${DOTFILES_REPO}/fish/functions ~/.config/fish/functions
+    # symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish ~/.config/fish/config.fish
+    # symlink "fish:abbreviations.fish" ${DOTFILES_REPO}/fish/abbreviations.fish ~/.config/fish/abbreviations.fish
+    # symlink "fish:oh_my_fish" ${DOTFILES_REPO}/fish/oh_my_fish ~/.config/omf
 
     # Visual Studio Code
     # symlink "vscode:settings.json" ${DOTFILES_REPO}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
@@ -300,16 +300,16 @@ function setup_macOS_defaults() {
     fi
 }
 
-function update_login_items() {
-    echo_info "Updating login items"
+# function update_login_items() {
+#     echo_info "Updating login items"
 
-    if osascript ${DOTFILES_REPO}/macOS/login_items.applescript &>/dev/null; then
-        echo_success "Login items updated successfully "
-    else
-        error "Login items update failed"
-        exit 1
-    fi
-}
+#     if osascript ${DOTFILES_REPO}/macOS/login_items.applescript &>/dev/null; then
+#         echo_success "Login items updated successfully "
+#     else
+#         error "Login items update failed"
+#         exit 1
+#     fi
+# }
 
 function coloredEcho() {
     local exp="$1"
