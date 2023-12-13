@@ -1,5 +1,4 @@
-tap "adoptopenjdk/openjdk"
-tap "heroku/brew"
+# tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
