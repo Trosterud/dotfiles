@@ -248,10 +248,12 @@ function setup_symlinks() {
     APPLICATION_SUPPORT=~/Library/Application\ Support
 
     echo_info "Setting up symlinks"
-    symlink "git" ${DOTFILES_REPO}/git/gitconfig ~/.gitconfig
+    symlink "zshrc" ${DOTFILES_REPO}/.zshrc ~/.zshrc
+
+    # symlink "git" ${DOTFILES_REPO}/git/gitconfig ~/.gitconfig
 
     # Disable shell login message
-    symlink "hushlogin" /dev/null ~/.hushlogin
+    # symlink "hushlogin" /dev/null ~/.hushlogin
 
     # symlink "fish:completions" ${DOTFILES_REPO}/fish/completions ~/.config/fish/completions
     # symlink "fish:functions" ${DOTFILES_REPO}/fish/functions ~/.config/fish/functions
