@@ -11,6 +11,7 @@ brew "diff-so-fancy" # for beautiful git diff
 # brew "flyway" # for migration management
 # brew "gifsicle" # for gif_compress fish function
 brew "git"
+brew "gd"
 # brew "fzf" # fuzzy search
 # brew "git-crypt"
 # brew "httpie"
@@ -33,3 +34,6 @@ brew "tree" # for printing folder tree in terminal
 brew "vim"
 brew "wifi-password"
 brew "yarn"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-history-substring-search"

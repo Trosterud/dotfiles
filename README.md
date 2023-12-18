@@ -16,7 +16,14 @@ Personal dotfiles to sync installs and configs.
 
   * Open a Fish shell and execute `compile_vim_plugins` and `install_oh_my_fish` functions.
 
-  * Set Switch Window shortcut manually:
-    * Settings -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window -> (set to Cmd+<)
+  * Set delete word in terminal shortcut
+    * Open Terminal -> Settings -> Profiles -> Keyboard -> + -> option backspace = \027 Shortcuts
+
+  * Set zsh history-substring up and down key bindings:
+    * https://github.com/zsh-users/zsh-history-substring-search
+
+  * Set Rectangle settings
+    * choose Spectacle if asked. If not, go to "restore" and choose "spectacle".
+    * Set Restore size after snap to false from middle menu
 
 * The script `bootstrap` should be idempotent. Run often, and configure as much as possible here instead of manually

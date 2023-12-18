@@ -1,0 +1,120 @@
+{
+  "entries": {
+    "cask": {
+      "anki": {
+        "version": "23.10.1",
+        "options": {
+          "full_name": "anki"
+        }
+      },
+      "bitwarden": {
+        "version": "2023.12.0",
+        "options": {
+          "full_name": "bitwarden"
+        }
+      },
+      "discord": {
+        "version": "0.0.289",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "firefox": {
+        "version": "120.0.1",
+        "options": {
+          "full_name": "firefox"
+        }
+      },
+      "grandperspective": {
+        "version": "3.4.2",
+        "options": {
+          "full_name": "grandperspective"
+        }
+      },
+      "linear-linear": {
+        "version": "1.22.1,2309297qs4n1ask",
+        "options": {
+          "full_name": "linear-linear"
+        }
+      },
+      "numi": {
+        "version": "3.32.721",
+        "options": {
+          "full_name": "numi"
+        }
+      },
+      "postico": {
+        "version": "2.0.5,9661",
+        "options": {
+          "full_name": "postico"
+        }
+      },
+      "rectangle": {
+        "version": "0.75",
+        "options": {
+          "full_name": "rectangle"
+        }
+      },
+      "selfcontrol": {
+        "version": "4.0.2",
+        "options": {
+          "full_name": "selfcontrol"
+        }
+      },
+      "signal": {
+        "version": "6.41.0",
+        "options": {
+          "full_name": "signal"
+        }
+      },
+      "tableplus": {
+        "version": "5.6.6,520",
+        "options": {
+          "full_name": "tableplus"
+        }
+      },
+      "telegram": {
+        "version": "10.3,256373",
+        "options": {
+          "full_name": "telegram"
+        }
+      },
+      "tresorit": {
+        "version": "3.5.2855.4010",
+        "options": {
+          "full_name": "tresorit"
+        }
+      },
+      "vlc": {
+        "version": "3.0.20",
+        "options": {
+          "full_name": "vlc"
+        }
+      },
+      "whatsapp": {
+        "version": "2.23.24.80",
+        "options": {
+          "full_name": "whatsapp"
+        }
+      },
+      "webstorm": {
+        "version": "2023.3.1,233.11799.293",
+        "options": {
+          "full_name": "webstorm"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "ventura": {
+        "HOMEBREW_VERSION": "4.1.25",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "14.3.1.0.1.1683849156",
+        "Xcode": "14.3",
+        "macOS": "13.4"
+      }
+    }
+  }
+}
