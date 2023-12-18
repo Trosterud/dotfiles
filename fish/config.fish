@@ -14,7 +14,7 @@ source ~/.config/fish/abbreviations.fish
 # Environment Variables
 ############################################################################
 set --global --export GIT_GLOBAL_NAME  "Sindre Trosterud"
-set --global --export GIT_GLOBAL_EMAIL "sindre.reino.trosterud@gmail.com"
+set --global --export GIT_GLOBAL_EMAIL "20249331+Trosterud@users.noreply.github.com"
 set --global --export GIT_AUTHOR_NAME     $GIT_GLOBAL_NAME
 set --global --export GIT_COMMITTER_NAME  $GIT_GLOBAL_NAME
 set --global --export GIT_AUTHOR_EMAIL    $GIT_GLOBAL_EMAIL
@@ -53,11 +53,11 @@ set -q XDG_DATA_HOME
     or set  --global --export OMF_PATH "$HOME/.local/share/omf"
 source $OMF_PATH/init.fish
 
+############################################################################
+# Configuration for CocoaPods (used by expo for builds)
+############################################################################
+set -gx PATH $PATH /usr/local/lib/ruby/gems/3.2.0/bin
 
-############################################################################
-# Configuration for work project cred
-############################################################################
-set --global --export GOOGLE_APPLICATION_CREDENTIALS "$HOME/.credentials/iprally-9844ece235f9.json"
 
 ############################################################################
 # 
@@ -68,5 +68,14 @@ set -x PATH $DENO_INSTALL/bin:$PATH
 
 
 # pyenv init
-  pyenv init - | source
+# pyenv init - | source
+
 set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
+
+
+############################################################################
+# Android emulator
+############################################################################
+set -x ANDROID_HOME $HOME/Library/Android/sdk
+set -x PATH $PATH $ANDROID_HOME/emulator
+set -x PATH $PATH $ANDROID_HOME/platform-tools

@@ -23,13 +23,13 @@
 ############################################################################
 [core]
 	autocrlf = input  # bit.ly/2RLLxed
-	editor = code --wait
+	editor = nano
 [credential]
 	useHttpPath = true
 	helper = store
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential

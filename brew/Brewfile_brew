@@ -24,7 +24,7 @@ brew "node"
 brew "npm"
 brew "parallel" # to run brew installs in paralell
 # brew "pgcli" # Postgresql CLI with auto-completion and syntax highlighting
-brew "postgresql"
+brew "postgresql@14"
 # brew "python"
 brew "tldr" # for a succint man pages alternative
 # brew "tmux"
