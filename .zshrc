@@ -1,4 +1,5 @@
 export PATH=/opt/homebrew/bin:$PATH
+# export PATH=/usr/local/bin:$PATH # Also check the git/gitconfig file
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(brew shellenv)"
 ZSH_AUTOSUGGEST_CASE_SENSITIVE="false"
