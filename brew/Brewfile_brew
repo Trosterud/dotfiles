@@ -1,10 +1,12 @@
 brew "coreutils" # for awesome commands like timeout
 # brew "blueutil" # for connecting to bluetooth headsets
+brew "cocoapods" # for iOS development, local expo builds
 # brew "clj-kondo"
 # brew "clojure/tools/clojure"
 # brew "dockutil"
 # brew "docker-compose"
 brew "diff-so-fancy" # for beautiful git diff
+brew "fastlane" # for iOS development, local expo builds
 # brew "ffmpeg" # for video manipulation, also vid -> gif
 # brew "fish" # for getting the good opinionated shell
 # brew "flake8" # for linting Python files
@@ -22,6 +24,7 @@ brew "mas"
 brew "nano" # mac uses pico symlinked as nano. But pico doesn't have mouse scroll
 brew "node"
 brew "npm"
+brew "nvm"
 brew "parallel" # to run brew installs in paralell
 # brew "pgcli" # Postgresql CLI with auto-completion and syntax highlighting
 brew "postgresql@14"
