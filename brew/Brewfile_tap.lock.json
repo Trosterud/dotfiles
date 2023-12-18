@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "3f43dfca496433f364bc1c70711c581b0e804dec"
+        "revision": "743f2aad47601c1e162f0ff05219d5a0bb15e0ad"
       },
       "homebrew/services": {
-        "revision": "25cf98dbe8fff01cc797e083e0b1cd23f933bb5b"
+        "revision": "6819359f72a8e0001370790685bf86c9897d9757"
       }
     }
   },
@@ -18,6 +18,14 @@
         "CLT": "14.3.1.0.1.1683849156",
         "Xcode": "14.3",
         "macOS": "13.4"
+      },
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.1.25",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.0.0.0.1.1694021235",
+        "Xcode": "15.1",
+        "macOS": "14.1.2"
       }
     }
   }
