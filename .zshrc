@@ -1,4 +1,4 @@
-# export PATH=/opt/homebrew/bin:$PATH
+# export PATH=/opt/homebrew/bin:$PATH # the version depends on where homebrew is installed
 export PATH=/usr/local/bin:$PATH # Also check the git/gitconfig file
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(brew shellenv)"
@@ -9,6 +9,24 @@ source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Lazy Load NVM
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+    unset -f nvm
+    source "$(brew --prefix nvm)/nvm.sh"
+    nvm "$@"
+}
+node() {
+    unset -f node
+    source "$(brew --prefix nvm)/nvm.sh"
+    node "$@"
+}
+npm() {
+    unset -f npm
+    source "$(brew --prefix nvm)/nvm.sh"
+    npm "$@"
+}
 
 # Find and set branch name var if in git repository.
 function git_branch_name()
@@ -22,10 +40,6 @@ function git_branch_name()
   fi
 }
 
-# Load NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # Enable substitution in the prompt.
 setopt prompt_subst
 
@@ -34,14 +48,19 @@ PROMPT='%F{cyan}%2/%f $(git_branch_name) %F{cyan}>%f '
 
 # Aliases
 alias bootstrap="bash ~/personal/dotfiles/bootstrap.sh"
-alias branch='f() { git checkout -b $1; git push --set-upstream origin $1; }; f'
+branch() {
+    git checkout -b "$1"
+    git push --set-upstream origin "$1"
+}
 alias c="clear"
 alias chats="open /Applications/WhatsApp.app/ /Applications/Telegram.app/ /Applications/Signal.app/"
-alias clojure='f() { java -jar "$@"; }; f'
+clojure() {
+    java -jar "$@"
+}
 alias dot="cd ~/personal/dotfiles/"
 alias dotfiles="cd ~/personal/dotfiles/"
 alias emails="open https://www.gmail.com https://mail.aalto.fi https://webmail.numanconsult.com https://linkedin.com"
-alias extract='f() {
+extract() {
     for file in "$@"; do
         if [[ -f $file ]]; then
             echo "Extracting $file"
@@ -62,12 +81,19 @@ alias extract='f() {
             echo "$file is not a valid file"
         fi
     done
-}; f'
-alias g='f() { open "https://www.google.com/search?tbm=isch&q=$1"; }; f'
+}
+g() {
+    open "https://www.google.com/search?tbm=isch&q=$1"
+}
 alias ga='git add'
 alias gb='git branch'
-alias gc='f() { git commit -m "$1"; }; f'
-alias gch='f() { git checkout $1; git push --set-upstream origin $1; }; f'
+gc() {
+    git commit -m "$1"
+}
+gch() {
+    git checkout "$1"
+    git push --set-upstream origin "$1"
+}
 alias gd='clear && git diff'
 alias git_branch_cleanup='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d && git remote prune origin'
 alias gl='git pull'
@@ -76,19 +102,48 @@ alias gp='clear && git push'
 alias grm='git rebase master'
 alias gs='clear && git status'
 alias gum='git checkout master && git pull && git checkout -'
-alias gif_compress='f() {
+gif_compress() {
     case $2 in
         high) gifsicle --interlace $1 -O3 --colors 64 --output compressed.gif;;
         medium) gifsicle --interlace $1 -O3 --colors 128 --output compressed.gif;;
         low) gifsicle --interlace $1 -O3 --colors 256 --output compressed.gif;;
         *) echo "Usage: gif_compress FILE high/medium/low";;
     esac
-}; f'
+}
 alias ii='clear && http ipinfo.io --print=b'
 alias lint='lein bikeshed && clj-kondo --lint src test && lein cljstyle fix'
-alias ll='f() { clear; ls -lah "$@"; }; f'
-alias personal_hotspot='f() { networksetup -setairportnetwork en0 "Nordic Roadshow" $1; }; f'
-alias pomodoro='f() { sleep 1500; notification "Pomodoro over" "25 minutes have passed, you are aware"; }; f &'
+ll() {
+    clear
+    ls -lah "$@"
+}
+personal_hotspot() {
+    networksetup -setairportnetwork en0 "Nordic Roadshow" $1
+}
+pomodoro() {
+    sleep 1500
+    notification "Pomodoro over" "25 minutes have passed, you are aware"
+}
 alias r='lein run || bin/serve'
-alias up='echo -e "####################################\n# Software Update \n####################################"; sudo softwareupdate --install --all; echo -e "####################################\n# Brew \n####################################"; brew update; brew upgrade; mas upgrade; brew cask outdated --greedy --verbose | ack --invert-match latest | awk "{print \$1;}" | xargs brew cask upgrade; brew cleanup; brew doctor; echo -e "####################################\n# Pip \n####################################"; pip-sync ~/personal/dotfiles/pip/requirements.txt; echo -e "####################################\n# Npm \n####################################"; npm update -g; echo -e "\n####################################\n# Oh-My-Fish \n####################################"; omf install; omf update; echo -e "####################################\n# Done \n####################################"'
-alias ws='f() { open -na "/Users/be/Applications/WebStorm.app" --args "$@"; }; f'
+up() {
+    echo -e "####################################\n# Software Update \n####################################"
+    sudo softwareupdate --install --all
+    echo -e "####################################\n# Brew \n####################################"
+    brew update
+    brew upgrade
+    mas upgrade
+    brew cask outdated --greedy --verbose | ack --invert-match latest | awk "{print \$1;}" | xargs brew cask upgrade
+    brew cleanup
+    brew doctor
+    echo -e "####################################\n# Pip \n####################################"
+    pip-sync ~/personal/dotfiles/pip/requirements.txt
+    echo -e "####################################\n# Npm \n####################################"
+    npm update -g
+    echo -e "\n####################################\n# Oh-My-Fish \n####################################"
+    omf install
+    omf update
+    echo -e "####################################\n# Done \n####################################"
+}
+
+ws() {
+    open -na "/Users/be/Applications/WebStorm.app" --args "$@"
+}
