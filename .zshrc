@@ -1,5 +1,5 @@
-export PATH=/opt/homebrew/bin:$PATH
-# export PATH=/usr/local/bin:$PATH # Also check the git/gitconfig file
+# export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$PATH # Also check the git/gitconfig file
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(brew shellenv)"
 ZSH_AUTOSUGGEST_CASE_SENSITIVE="false"
@@ -21,6 +21,10 @@ function git_branch_name()
     echo '- ('$branch')'
   fi
 }
+
+# Load NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Enable substitution in the prompt.
 setopt prompt_subst
@@ -68,9 +72,9 @@ alias gd='clear && git diff'
 alias git_branch_cleanup='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d && git remote prune origin'
 alias gl='git pull'
 alias gpl='git pull'
-alias gp='git push'
+alias gp='clear && git push'
 alias grm='git rebase master'
-alias gs='git status'
+alias gs='clear && git status'
 alias gum='git checkout master && git pull && git checkout -'
 alias gif_compress='f() {
     case $2 in
@@ -87,4 +91,4 @@ alias personal_hotspot='f() { networksetup -setairportnetwork en0 "Nordic Roadsh
 alias pomodoro='f() { sleep 1500; notification "Pomodoro over" "25 minutes have passed, you are aware"; }; f &'
 alias r='lein run || bin/serve'
 alias up='echo -e "####################################\n# Software Update \n####################################"; sudo softwareupdate --install --all; echo -e "####################################\n# Brew \n####################################"; brew update; brew upgrade; mas upgrade; brew cask outdated --greedy --verbose | ack --invert-match latest | awk "{print \$1;}" | xargs brew cask upgrade; brew cleanup; brew doctor; echo -e "####################################\n# Pip \n####################################"; pip-sync ~/personal/dotfiles/pip/requirements.txt; echo -e "####################################\n# Npm \n####################################"; npm update -g; echo -e "\n####################################\n# Oh-My-Fish \n####################################"; omf install; omf update; echo -e "####################################\n# Done \n####################################"'
-alias ws='f() { open -na "/Applications/WebStorm.app" --args "$@"; }; f'
+alias ws='f() { open -na "/Users/be/Applications/WebStorm.app" --args "$@"; }; f'
