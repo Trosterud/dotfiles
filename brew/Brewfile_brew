@@ -22,6 +22,7 @@ brew "gd"
 # brew "markdown"
 brew "mas"
 brew "nano" # mac uses pico symlinked as nano. But pico doesn't have mouse scroll
+brew "nvm"
 brew "node"
 brew "npm"
 brew "nvm"
