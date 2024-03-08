@@ -1,5 +1,7 @@
 # export PATH=/opt/homebrew/bin:$PATH # the version depends on where homebrew is installed
 export PATH=/usr/local/bin:$PATH # Also check the git/gitconfig file
+# export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(brew shellenv)"
 ZSH_AUTOSUGGEST_CASE_SENSITIVE="false"
@@ -45,6 +47,9 @@ setopt prompt_subst
 
 # Config for prompt. PS1 synonym.
 PROMPT='%F{cyan}%2/%f $(git_branch_name) %F{cyan}>%f '
+
+# Path
+export ANDROID_HOME=/Users/be/Library/Android/sdk
 
 # Aliases
 alias bootstrap="bash ~/personal/dotfiles/bootstrap.sh"
@@ -99,9 +104,11 @@ alias git_branch_cleanup='git branch --merged | egrep -v "(^\*|master|dev)" | xa
 alias gl='git pull'
 alias gpl='git pull'
 alias gp='clear && git push'
+alias go='clear && git push && gh pr create --fill'
 alias grm='git rebase master'
 alias gs='clear && git status'
 alias gum='git checkout master && git pull && git checkout -'
+alias gurm='git checkout master && git rebase master && git pull && git checkout -'
 gif_compress() {
     case $2 in
         high) gifsicle --interlace $1 -O3 --colors 64 --output compressed.gif;;
@@ -147,3 +154,4 @@ up() {
 ws() {
     open -na "/Users/be/Applications/WebStorm.app" --args "$@"
 }
+export PATH=$PATH:$HOME/.maestro/bin
