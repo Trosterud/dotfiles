@@ -98,6 +98,7 @@ gc() {
 gch() {
     git checkout "$1"
     git push --set-upstream origin "$1"
+    git pull
 }
 alias gd='clear && git diff'
 alias git_branch_cleanup='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d && git remote prune origin'
@@ -108,7 +109,7 @@ alias go='clear && git push && gh pr create --fill'
 alias grm='git rebase master'
 alias gs='clear && git status'
 alias gum='git checkout master && git pull && git checkout -'
-alias gurm='git checkout master && git rebase master && git pull && git checkout -'
+alias gurm='git checkout master && git pull && git pull && git checkout - && git rebase master'
 gif_compress() {
     case $2 in
         high) gifsicle --interlace $1 -O3 --colors 64 --output compressed.gif;;
